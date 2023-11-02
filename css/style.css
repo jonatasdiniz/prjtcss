@@ -18,5 +18,7 @@ p {
 .navbar-container {
 width: 100%;
 background-color: #232A31 ;
-
+height: 80px;
+/*em= representa uma vez o tamanho da fonte definida pai. Ex. se no pai foi definida fonte de 10px tem 1 em, o tamanho do filho será de 10px e assim por diante. Caso o pai não tenha um tamanho definido ele irá usar como base 16px que é a fonte padrão definida pelo navegador*/
+padding: 0 2em;
 }
