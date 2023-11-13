@@ -1,11 +1,9 @@
 * {
     /*reset das margens e do padding do navegador*/
-    margin: 0;
-    padding: 0;
-
+    margin: 0px;
+    padding: 0px;
     /* altera a familia de fontes do elemento*/
-    font-family: "Montserrat", Arial, Helvetica, sans-serif;
-
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
 h1, h2, h3 {
@@ -13,12 +11,312 @@ h1, h2, h3 {
 }
 
 p {
-    color: #70747A;
+    color: #70747a;
 }
+
 .navbar-container {
-width: 100%;
-background-color: #232A31 ;
-height: 80px;
-/*em= representa uma vez o tamanho da fonte definida pai. Ex. se no pai foi definida fonte de 10px tem 1 em, o tamanho do filho será de 10px e assim por diante. Caso o pai não tenha um tamanho definido ele irá usar como base 16px que é a fonte padrão definida pelo navegador*/
-padding: 0 2em;
+    /*largura*/
+    width: 100%;
+    /*altera a cor de fundo*/
+    background-color: #232A31;
+    height: 80px;
+    /*em= representa uma vez o tamanho da fonte definida no elemento pai. Ex: se no pai foi definida fonte 10px e o filho tem 1em, o tamanho do filho será de 10px e assim por diante. Caso o pai não tenha um tamanho definida ele irá usar como base 16px que é a fonte do navegador*/
+    padding: 0 2em;
+    /* impede que a propriedade padding faça o elememto crescer de tamanho. Ex: se um padding for usado em um elemento de 200px de largura e 200px de altura ele irá fazer o elemento ter 220px de largura por 220px de altura aumento de tamanho do elemento. Quando usamos o box-sizing:border-box esse aumento de tamanho não irá acontecer pois o espaço do padding será descontado do elemento pai. */
+    box-sizing: border-box;
+    position: relative;
+    
+}
+
+.logo {
+    width: 50px;
+    margin-top: 15px;
+}
+
+nav {
+    position: relative;
+}
+
+.navbar-items {
+    position: absolute;
+    /** tirar bolinha de lista desordenada é pelo list-style: none;. unset só tira a bolinha e não o espaço, diferente do none que tira ambos **/
+    list-style: none;
+    /** display altera o comportamento dos elementos da tela. ex: converte um elemento de bloco para um elemento de linha, assim como o inverso. assim como tbm permite definir um elemento flexível usando o display:flex; **/
+    display: inline-block;
+    margin: 0px;
+    /** coordenada que só é possivel a utilização quando se tem um elemento definido como position:absolute **/
+    right: 0px;
+    height: 80px;
+    /* line-height = altera o espaçamento entre as linhas do texto. Quando se usa um line-height da mesma altura que o elemento ele centraliza o texto na vertical */
+    line-height: 80px;
+    list-style: none;
+
+}
+
+.navbar-items li {
+    display: inline-block;
+    /** text-transform:uppercase = transforma todo o texto em letras maiusculas **/
+    text-transform: uppercase;
+    margin-left: 25px;
+
+}
+
+.navbar-items li a {
+    color: #fff;
+    /* retira o underline embaixo dos links */
+    text-decoration: none;
+    /* define em quanto tempo a duração do hover irá acontecer */
+    transition: .5s;
+}
+
+/* hover = representa o passar do mouse sobre o elemento */
+.navbar-items li a:hover { 
+    color: #ccc;
+}
+
+.default-btn { 
+    background-color: #2cc76a;
+    padding: 15px 20px;
+    /* border-radius = arredonda as bordas do elemento */
+    border-radius: 5px;
+}
+
+/* MAIN BANNER */
+
+/* imagens de fundo sempre no css */
+
+.main-banner {
+    /* define uma imagem para o fundo do elemento */
+    background-image: url('../img/mainbanner.png');
+    /* define como a imagem irá se adaptar ao elemento onde ela foi inserida. nesse caso ela irá se posicionar de acordo o pedido */
+    background-position: center;
+    background-size: cover;
+    padding: 10em 0;
+    position: relative;
+    text-align: center;
+}
+
+.main-banner h1,
+.main-banner p {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+}
+
+.main-banner h1 {
+    font-size: 54px;
+}
+
+.main-banner p {
+    font-size: 32px;
+}
+
+/* especialidades */
+
+.specialties-container {
+    padding: 5em 0;
+}
+
+.specialties-container ul {
+    display: flex;
+    /* flex-direction: row; e flex-wrap: nowrap; mesmo não estando presente estará como padrão na página*/
+    width: 90%;
+    margin: 0 auto;
+    list-style: none;
+}
+
+.specialties-container ul li {
+    flex: 1 1 200px;
+    text-align: center;
+    padding: 20px;
+}
+
+.fa-solid {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.fa-shield-halved {
+    color: #2cc76a
+}
+
+.fa-rocket {
+    color: #ef3f29;
+}
+
+.fa-comments {
+    color: #EF8F29;
+}
+
+.specialties-container ul li h3 {
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.specialties-container ul li p {
+    /* espaçamento entre as linhas */
+    line-height: 24px;
+    color: #70747a;
+}
+
+/* preços */
+
+.pricing-container {
+    padding-bottom: 5em;
+    text-align: center;
+}
+
+.pricing-container h2 {
+    font-size: 36px;
+    margin-top: 0px;
+}
+
+.pricing-container p {
+    font-size: 20px;
+}
+
+.plans-container {
+    display: flex;
+    /* space-between: utiliza o espaçamento entre os itens e dependerá de quanto resta no espaço do item pai; space-around: faz o mesmo que o between com a diferença que tbm será colocado nas suas laterais */
+    justify-content: space-between;
+    margin-top: 50px;
+    width: 90%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+.plans-container .plan {
+        flex: 1 1 200px;
+        max-width: 300px;
+        margin: 0 20px;
+
+    }
+
+.plans-container .plan ul {
+        list-style: none;
+        padding: 0;
+    }
+
+.plan li {
+    height: 70px;
+    line-height: 70px;
+    background-color: #e8e9ea;
+    color: #333; 
+}
+
+.plan .price { 
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background-color: #2dd79a;
+    color: #fff;
+    text-align: center;
+    line-height: 120px;
+    font-size: 18px;
+    position: relative;
+    margin: 0 auto;
+    top: 40px;
+}
+
+.plan .plan-name {
+    text-transform: uppercase;
+    font-size: 20px;
+    padding-top: 35px;
+    padding-bottom: 20px;
+    background-color: #202b34;
+    color: #fff;
+    font-weight: bold;
+}
+
+.plan .plan-btn {
+    background-color: #2cc76a;
+    color: #fff;
+    font-size: 24px;
+    height: 75px;
+    line-height: 75px;
+    /* mudar para maõzinha do link no cursor do mouse */
+    cursor: pointer;
+}
+
+.plan .recommended {
+    background-color: #f45c57;
+}
+
+/* domain */
+
+.searchdomain-container {
+    background-color: #34454e;
+    text-align: center;
+    padding: 5em 0;
+    
+}
+.searchdomain-container h2 {
+    color: #fff;
+    font-size: 42px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+.searchdomain-container p {
+    color: #d5d5d5;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+.searchdomain-container input {
+    display: block;
+    margin: 0 auto; 
+    border: none;
+    border-radius: 5px;    
+}
+.searchdomain-container input[type=text]{
+    margin-bottom: 25px;
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+}
+.searchdomain-container input[type=submit]{
+    background-color: #2cc76a;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 24px;
+}
+
+/* CONTATO */
+
+.contact-container  {
+    text-align: center;
+    padding-top: 5em;
+    padding-bottom: 2em;
+}
+
+.contact-container h2 {
+    font-size: 36px;
+}
+
+.contact-container p {
+    font-size: 20px;    
+    margin-bottom: 40px;
+}
+.contact-container input, .contact-container textarea {
+    width: 200px;   
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    /* 0 equivale a top, 10px equivale a esquerda e direita, e 20px ao bottom */
+    margin: 0 10px 20px;
+}
+.contact-container textarea {
+    display: block;
+    margin: 0 auto 20px;
+    width: 468px;
+    height: 150px;
+}
+.contact-container input[type=submit]{
+    background-color: #2cc76a;
+    color: #fff;
+} 
+footer{
+    text-align: center;
+    margin-bottom: 20px ;
 }
