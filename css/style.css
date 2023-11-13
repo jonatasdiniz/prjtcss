@@ -311,6 +311,7 @@ nav {
     margin: 0 auto 20px;
     width: 468px;
     height: 150px;
+    resize: none;
 }
 .contact-container input[type=submit]{
     background-color: #2cc76a;
